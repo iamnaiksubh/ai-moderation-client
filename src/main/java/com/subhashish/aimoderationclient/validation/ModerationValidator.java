@@ -1,4 +1,4 @@
-package com.subhashish.aimoderationclient.service;
+package com.subhashish.aimoderationclient.validation;
 
 import com.subhashish.aimoderationclient.model.ModerationResult;
 
