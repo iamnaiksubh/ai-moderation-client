@@ -44,3 +44,13 @@ Add the following `<dependency>` block to your target application's `pom.xml` fi
 
 ### 2. Call validate method
 
+Once the dependency is added, you can inject the provided `ModerationValidator` into your Spring components and call the `validate` method with the content you want to check.
+
+### 3. Configuration Properties
+
+To configure the library, you may need to provide your AI provider credentials or override default settings in your target application's `application.properties` or `application.yml` file:
+
+```yaml
+gemini-model-url= GEMINI_MODEL_URL
+gemini-api-key=YOUR_API_KEY
+```
