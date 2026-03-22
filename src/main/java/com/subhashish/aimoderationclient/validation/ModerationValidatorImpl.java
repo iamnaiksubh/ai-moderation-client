@@ -1,21 +1,19 @@
-package com.subhashish.aimoderationclient.service;
+package com.subhashish.aimoderationclient.validation;
 
 import com.subhashish.aimoderationclient.model.ModerationResult;
 import okhttp3.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-@Service
 public class ModerationValidatorImpl implements ModerationValidator {
 
     @Value("${gemini-model-url}")
-    private String API_URL;
+    private String apiURL;
 
     @Value("${gemini-api-key}")
     private String apiKey;
@@ -56,7 +54,7 @@ public class ModerationValidatorImpl implements ModerationValidator {
             ));
 
             Request request = new Request.Builder()
-                    .url(API_URL + "?key=" + apiKey)
+                    .url(apiURL + "?key=" + apiKey)
                     .header("Content-Type", "application/json")
                     .post(RequestBody.create(requestBody, MediaType.get("application/json")))
                     .build();
